@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Contact from "./Contact";
 import Landing from "./Landing";
@@ -16,6 +17,7 @@ const Home = () => {
             <Contact />
             <Partners />
             <Reviews />
+            <Footer />
         </>
     );
 }
