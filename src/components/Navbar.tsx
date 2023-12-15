@@ -21,13 +21,13 @@ const Navbar = () => {
 
     return (
         <nav ref={navRef}>
-            <div className="relative z-30 flex items-center justify-center py-8 shadow-sm">
+            <div className="fixed top-0 left-0 z-30 flex items-center justify-center w-screen py-8 bg-white shadow">
                 <button className="absolute p-2 text-2xl left-6" onClick={() => setIsExpanded(prev => !prev)}>
                     <IoMdMenu />
                 </button>
                 <div className="text-xl font-logo">GLIMPSE</div>
             </div>
-            <div className={`absolute top-0 left-0 h-screen pl-8 transition-transform bg-white w-60 ${isExpanded ? "" : "-translate-x-60"}`}>
+            <div className={`fixed top-0 left-0 h-screen pl-8 transition-transform bg-white w-60 ${isExpanded ? "" : "-translate-x-60"}`}>
                 <ul className="mt-32 font-medium">
                     <li className="mb-6 underline underline-offset-8"><Link to="/">HOME</Link></li>
                     <li className="mb-6"><Link to="/services">SERVICES</Link></li>
