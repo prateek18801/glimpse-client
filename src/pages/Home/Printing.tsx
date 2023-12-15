@@ -35,7 +35,7 @@ const Printing = () => {
     return (
         <section className="mb-24">
             <div className="mb-12 text-2xl font-semibold text-center">Popular Printing Categories</div>
-            <div className="grid grid-cols-2 gap-4 px-8">
+            <div className="grid grid-cols-2 gap-4 px-4">
                 {prints.map((print, i) => {
                     return <PrintingCard key={i} {...print} />;
                 })}
