@@ -2,7 +2,7 @@ import { IoSearch } from "react-icons/io5";
 
 const Landing = () => {
     return (
-        <section className="mb-36">
+        <section className="my-24">
             <div className="w-full mb-8 bg-gray-400 aspect-square">
                 <img src="https://image.made-in-china.com/202f0j00zQnoVGjBYfbp/Hot-Sale-Cheap-Colorful-Eco-Friendly-Paper-Bag-Printing-for-Clothes-Elegant-Gift-Goodies-Color-Packaging-Paper-Bag.webp" alt="temp" />
             </div>
