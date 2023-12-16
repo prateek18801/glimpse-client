@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
@@ -27,13 +27,21 @@ const Navbar = () => {
                 </button>
                 <div className="text-xl font-logo">GLIMPSE</div>
             </div>
-            <div className={`fixed top-0 left-0 h-screen pl-8 transition-transform bg-white w-60 ${isExpanded ? "" : "-translate-x-60"}`}>
+            <div className={`fixed top-0 left-0 h-screen z-20 pl-8 transition-transform bg-white w-60 ${isExpanded ? "" : "-translate-x-60"}`}>
                 <ul className="mt-32 font-medium">
-                    <li className="mb-6 underline underline-offset-8"><Link to="/">HOME</Link></li>
-                    <li className="mb-6"><Link to="/services">SERVICES</Link></li>
-                    <li className="mb-6"><Link to="/about">ABOUT</Link></li>
-                    <li className="mb-12"><Link to="/contact">CONTACT</Link></li>
-                    <Link to="/login"><button className="px-4 py-2 text-white bg-black">LOGIN</button></Link>
+                    <li className="mb-6">
+                        <NavLink to="/" className={({ isActive }) => isActive ? "underline underline-offset-8" : ""}>HOME</NavLink>
+                    </li>
+                    <li className="mb-6">
+                        <NavLink to="/services" className={({ isActive }) => isActive ? "underline underline-offset-8" : ""}>SERVICES</NavLink>
+                    </li>
+                    <li className="mb-6">
+                        <NavLink to="/about" className={({ isActive }) => isActive ? "underline underline-offset-8" : ""}>ABOUT</NavLink>
+                    </li>
+                    <li className="mb-12">
+                        <NavLink to="/contact" className={({ isActive }) => isActive ? "underline underline-offset-8" : ""}>CONTACT</NavLink>
+                    </li>
+                    <NavLink to="/login"><button className="px-4 py-2 text-white bg-black">LOGIN</button></NavLink>
                 </ul>
             </div>
         </nav>
