@@ -44,9 +44,13 @@ const ServiceCard = ({ title, image, description }: { title: string, image: stri
             <div className="w-full mb-4 bg-gray-400 aspect-square">
                 <img src={image} alt={title} />
             </div>
-            <div className="mx-4 mb-2 text-2xl font-medium">{title}</div>
-            <div className="mx-4 mb-4">{description}</div>
-            <Link to="/contact"><button className="p-4 mx-4 mb-4 font-medium text-white bg-black rounded-sm">Contact Sales</button></Link>
+            <div className="mx-4 mb-2 text-2xl font-medium text-center">{title}</div>
+            <div className="mx-4 mb-4 text-center">{description}</div>
+            <div className="mx-4 mb-8 text-center">
+                <Link to="/contact" state={{subject: `Query: ${title}`}}>
+                    <button className="p-4 font-medium text-white bg-black rounded-sm">Contact Sales</button>
+                </Link>
+            </div>
         </div>
     );
 }

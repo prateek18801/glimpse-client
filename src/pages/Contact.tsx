@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { PiPaperPlaneTiltBold } from "react-icons/pi";
 import Navbar from "../components/Navbar";
@@ -14,11 +15,13 @@ type FormDataType = {
 };
 
 const Contact = () => {
+    const location = useLocation();    
+
     const [formData, setFormData] = useState<FormDataType>({
         name: "",
         email: "",
         contact: "",
-        subject: "",
+        subject: location?.state?.subject || "",
         message: "",
         access_key: import.meta.env.VITE_FORM_SUBMIT_KEY
     });
@@ -82,7 +85,7 @@ const Contact = () => {
                         <label htmlFor="contact" className="contact-label">Contact</label>
                     </div>
                     <div className="contact-form-control">
-                        <input type="text" name="subject" id="subject" className="contact-input peer" value={formData.name} onChange={handleInputChange} placeholder=" " required />
+                        <input type="text" name="subject" id="subject" className="contact-input peer" value={formData.subject} onChange={handleInputChange} placeholder=" " required />
                         <label htmlFor="subject" className="contact-label">Subject</label>
                     </div>
 
@@ -90,8 +93,8 @@ const Contact = () => {
                         <textarea name="message" id="message" className="py-4 resize-none contact-input peer" value={formData.message} onChange={handleInputChange} placeholder=" " />
                         <label htmlFor="message" className="contact-label">Message</label>
                     </div>
-                    <button className="flex items-center justify-center px-6 py-4 text-white bg-black rounded-sm" type="submit" disabled={loading} aria-label="submit">
-                        <span className="mr-2">Submit</span>
+                    <button className="flex items-center justify-center px-8 py-4 font-medium text-white bg-black rounded-sm" type="submit" disabled={loading} aria-label="submit">
+                        <span className="mr-3">Submit</span>
                         {loading ? <AiOutlineLoading3Quarters className="animate-spin" /> : <PiPaperPlaneTiltBold />}
                     </button>
                 </form>
