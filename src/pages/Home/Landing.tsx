@@ -11,7 +11,7 @@ const Landing = () => {
                 <div className="mb-10 text-sm font-medium text-center text-gray-600">Order prints by course, departments or special events!</div>
                 <div className="flex w-full">
                     <div className="flex items-center flex-grow px-4 mr-2 rounded-sm shadow">
-                        <input type="text" className="w-full h-full py-4 outline-none" placeholder="Enter your printing requirements" />
+                        <input type="text" className="w-full h-full py-4 outline-none" placeholder="Enter your requirement" />
                         <div className="text-xl"><IoSearch /></div>
                     </div>
                     <button className="px-4 py-2 text-white bg-black rounded-sm">Search</button>
