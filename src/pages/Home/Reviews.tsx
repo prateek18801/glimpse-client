@@ -37,7 +37,7 @@ const Reviews = () => {
     ];
 
     return (
-        <section className="mb-20">
+        <section className="mb-20 md:px-16">
             <div className="mb-12 text-2xl font-semibold text-center">Reviews From Our Users</div>
             <div className="flex gap-4 px-8 py-4 overflow-x-scroll">
                 {reviews.map((review, i) => {
