@@ -50,14 +50,14 @@ const About = () => {
         <>
             <Navbar />
             <section className="my-32">
-                <div className="mb-12 text-2xl font-semibold text-center">Who Are We</div>
-                <div className="flex flex-wrap gap-8">
+                <div className="mb-12 text-2xl font-semibold text-center md:text-3xl">Who Are We</div>
+                <div className="flex flex-wrap justify-center px-8 gap-x-12 gap-y-16">
                     {pointers.map((point, i) => {
                         return (
-                            <div key={i} className="mx-8">
+                            <div key={i} className="md:w-1/5">
                                 <div className="mb-2 text-xl font-semibold text-center">{point.title}</div>
                                 <hr className="mb-2" />
-                                <div>{point.description}</div>
+                                <div className="text-justify">{point.description}</div>
                             </div>
                         )
                     })}
