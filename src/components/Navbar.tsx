@@ -1,8 +1,11 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
+import ConfigContext from "../contexts/ConfigContext";
 
 const Navbar = () => {
+
+    const config = useContext(ConfigContext);
 
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -49,7 +52,7 @@ const Navbar = () => {
             <div className="fixed top-0 left-0 z-30 items-center justify-between hidden w-full px-16 py-6 bg-white shadow-sm md:flex">
                 <div className="flex gap-x-16">
                     <div className="text-2xl font-logo">GLIMPSE</div>
-                    <ul className="flex items-center gap-4 text-sm font-medium text-neutral-600">
+                    <ul className="flex items-center gap-8 text-sm font-medium text-neutral-600">
                         <li className="">
                             <NavLink to="/" className={({ isActive }) => isActive ? "underline underline-offset-8 text-black" : ""}>HOME</NavLink>
                         </li>
@@ -64,7 +67,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <NavLink to="/login"><button className="px-6 py-3 text-sm font-medium text-white bg-black rounded-sm">LOGIN</button></NavLink>
+                <a href={config.data.loginUrl}><button className="px-6 py-3 text-sm font-medium text-white bg-black rounded-sm">LOGIN</button></a>
             </div>
         </nav>
     );

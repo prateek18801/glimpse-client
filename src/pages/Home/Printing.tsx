@@ -1,38 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import ConfigContext from "../../contexts/ConfigContext";
 
 const Printing = () => {
-    const prints = [
-        {
-            image: "https://image.made-in-china.com/202f0j00zQnoVGjBYfbp/Hot-Sale-Cheap-Colorful-Eco-Friendly-Paper-Bag-Printing-for-Clothes-Elegant-Gift-Goodies-Color-Packaging-Paper-Bag.webp",
-            title: "Paper Bags",
-            description: "lorem ipsum dolor sit amet"
-        },
-        {
-            image: "https://image.made-in-china.com/202f0j00zQnoVGjBYfbp/Hot-Sale-Cheap-Colorful-Eco-Friendly-Paper-Bag-Printing-for-Clothes-Elegant-Gift-Goodies-Color-Packaging-Paper-Bag.webp",
-            title: "Paper Bags",
-            description: "lorem ipsum dolor sit amet"
-        },
-        {
-            image: "https://image.made-in-china.com/202f0j00zQnoVGjBYfbp/Hot-Sale-Cheap-Colorful-Eco-Friendly-Paper-Bag-Printing-for-Clothes-Elegant-Gift-Goodies-Color-Packaging-Paper-Bag.webp",
-            title: "Paper Bags",
-            description: "lorem ipsum dolor sit amet"
-        },
-        {
-            image: "https://image.made-in-china.com/202f0j00zQnoVGjBYfbp/Hot-Sale-Cheap-Colorful-Eco-Friendly-Paper-Bag-Printing-for-Clothes-Elegant-Gift-Goodies-Color-Packaging-Paper-Bag.webp",
-            title: "Paper Bags",
-            description: "lorem ipsum dolor sit amet"
-        },
-        {
-            image: "https://image.made-in-china.com/202f0j00zQnoVGjBYfbp/Hot-Sale-Cheap-Colorful-Eco-Friendly-Paper-Bag-Printing-for-Clothes-Elegant-Gift-Goodies-Color-Packaging-Paper-Bag.webp",
-            title: "Paper Bags",
-            description: "lorem ipsum dolor sit amet"
-        },
-        {
-            image: "https://image.made-in-china.com/202f0j00zQnoVGjBYfbp/Hot-Sale-Cheap-Colorful-Eco-Friendly-Paper-Bag-Printing-for-Clothes-Elegant-Gift-Goodies-Color-Packaging-Paper-Bag.webp",
-            title: "Paper Bags",
-            description: "lorem ipsum dolor sit amet"
-        }
-    ];
+
+    const config = useContext(ConfigContext);
+    const prints = config.data.printing;
 
     return (
         <section className="px-4 mb-24 md:px-16">
