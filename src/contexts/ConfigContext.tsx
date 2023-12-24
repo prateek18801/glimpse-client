@@ -1,14 +1,14 @@
 import { createContext, useState } from "react";
-import ConfigDataType, { defaultConfig } from "../config";
+import ConfigDataType, { sampleConfig } from "../config";
 
 const ConfigContext = createContext<{ data: ConfigDataType, setData: React.Dispatch<React.SetStateAction<ConfigDataType>> }>({
-    data: defaultConfig,
+    data: sampleConfig,
     setData: () => { }
 });
 
 export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
-    const [data, setData] = useState<ConfigDataType>(defaultConfig);
+    const [data, setData] = useState<ConfigDataType>(sampleConfig);
     return (
         <ConfigContext.Provider value={{ data, setData }}>
             {children}

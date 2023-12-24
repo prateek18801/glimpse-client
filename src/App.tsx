@@ -7,12 +7,12 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import ConfigContext from "./contexts/ConfigContext";
 import useFetch from "./hooks/useFetch";
-import ConfigDataType, { defaultConfig } from "./config";
+import ConfigDataType, { sampleConfig } from "./config";
 
 const App = () => {
 
     const { setData } = useContext(ConfigContext);
-    const { response, status } = useFetch<ConfigDataType>("/v1/config", defaultConfig);
+    const { response, status } = useFetch<ConfigDataType>("/v1/config", sampleConfig);
 
     useEffect(() => {
         setData(response);
