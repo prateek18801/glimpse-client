@@ -9,7 +9,7 @@
 }
 
 .contact-input {
-    @apply w-full h-full px-4 bg-transparent outline-none;
+    @apply w-full h-full px-4 bg-white outline-none;
 }
 
 .contact-label {
