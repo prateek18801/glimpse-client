@@ -2,14 +2,20 @@ import { useEffect, useState } from "react";
 
 const useFetch = <T>(route: string, initial: T) => {
 
-    const [error, setError] = useState<any>(null);
     const [response, setResponse] = useState<T>(initial);
-    const [loading, setLoading] = useState<boolean>(true);    
+    const [status, setStatus] = useState<"error" | "loading" | "success">("loading");
 
     useEffect(() => {
         const controller = new AbortController();
+
+        // 5s request timeout
+        const timeout = setTimeout(() => {
+            controller.abort();
+            setStatus("error");
+        }, 5000);
+
         (async () => {
-            setLoading(true);
+            setStatus("loading")
             try {
                 const response = await fetch(`${import.meta.env.VITE_SERVER_URL}${route}`, {
                     method: "GET",
@@ -21,21 +27,22 @@ const useFetch = <T>(route: string, initial: T) => {
                 });
                 const json = await response.json();
                 if (+response.status === 401 || +response.status === 403) throw new Error("Invalid Token!")
-                if (+response.status === 500) throw new Error("Internal Server Error!");
+                if (+response.status === 500) setStatus("error");
                 setResponse(json);
+                clearTimeout(timeout);
+                setStatus("success");
             } catch (err) {
-                setError(err);
-            } finally {
-                setLoading(false);
+                console.error(err);
             }
         })();
 
         return () => {
             controller.abort();
+            clearTimeout(timeout);
         }
     }, []);
-    
-    return { response, loading, error};
+
+    return { response, status };
 }
 
 export default useFetch;
