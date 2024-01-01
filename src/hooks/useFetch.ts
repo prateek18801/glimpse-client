@@ -20,8 +20,7 @@ const useFetch = <T>(route: string, initial: T) => {
                 const response = await fetch(`${import.meta.env.VITE_SERVER_URL}${route}`, {
                     method: "GET",
                     headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${import.meta.env.VITE_ACCESS_KEY}`
+                        "Content-Type": "application/json"
                     },
                     signal: controller.signal
                 });
