@@ -1,7 +1,5 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import ConfigContext from "../contexts/ConfigContext";
 
 const Services = () => {
@@ -10,18 +8,14 @@ const Services = () => {
     const services = config.data.services;
 
     return (
-        <>
-            <Navbar />
-            <section className="my-32">
-                <div className="mb-12 text-2xl font-semibold text-center md:text-3xl">What We Do</div>
-                <div className="flex flex-wrap justify-center gap-10 px-8">
-                    {services.map((service, i) => {
-                        return <ServiceCard key={i} {...service} />;
-                    })}
-                </div>
-            </section>
-            <Footer />
-        </>
+        <section className="my-32">
+            <div className="mb-12 text-2xl font-semibold text-center md:text-3xl">What We Do</div>
+            <div className="flex flex-wrap justify-center gap-10 px-8">
+                {services.map((service, i) => {
+                    return <ServiceCard key={i} {...service} />;
+                })}
+            </div>
+        </section>
     );
 }
 

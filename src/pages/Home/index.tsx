@@ -1,5 +1,3 @@
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 import Contact from "./Contact";
 import Landing from "./Landing";
 import Partners from "./Partners";
@@ -10,14 +8,12 @@ import Services from "./Services";
 const Home = () => {
     return (
         <>
-            <Navbar />
             <Landing />
             <Services />
             <Printing />
             <Contact />
             <Partners />
             <Reviews />
-            <Footer />
         </>
     );
 }
