@@ -25,7 +25,7 @@ const Navbar = () => {
     return (
         <nav ref={navRef}>
             <div className="md:hidden">
-                <div className="fixed top-0 left-0 z-30 flex items-center justify-center w-screen py-8 bg-white shadow">
+                <div className="fixed top-0 left-0 z-30 flex items-center justify-center w-screen py-6 bg-white shadow">
                     <button className="absolute p-2 text-2xl left-6" onClick={() => setIsExpanded(prev => !prev)}>
                         <IoMdMenu />
                     </button>
@@ -49,7 +49,7 @@ const Navbar = () => {
                     </ul>
                 </div>
             </div>
-            <div className="fixed top-0 left-0 z-30 items-center justify-between hidden w-full px-16 py-6 bg-white shadow-sm md:flex">
+            <div className="fixed top-0 left-0 z-30 items-center justify-between hidden w-full px-16 py-4 bg-white shadow md:flex">
                 <div className="flex gap-x-16">
                     <div className="text-2xl font-logo">GLIMPSE</div>
                     <ul className="flex items-center gap-8 text-sm font-medium text-neutral-600">
