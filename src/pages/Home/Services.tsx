@@ -1,17 +1,12 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import ConfigContext from "../../contexts/ConfigContext";
+import config from "../../config";
 
 const Services = () => {
-
-    const config = useContext(ConfigContext);
-    const services = config.data.services;
-
     return (
         <section className="py-10 mb-20 bg-black">
             <div className="mb-12 text-2xl font-semibold text-center text-white">Services We Offer</div>
             <div className="flex flex-wrap justify-center gap-16 px-8 mb-10">
-                {services.map((service, i) => {
+                {config.services.map((service, i) => {
                     return <ServiceCard key={i} {...service} />;
                 })}
             </div>

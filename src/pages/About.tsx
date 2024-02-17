@@ -1,16 +1,11 @@
-import { useContext } from "react";
-import ConfigContext from "../contexts/ConfigContext";
+import config from "../config";
 
 const About = () => {
-
-    const config = useContext(ConfigContext);
-    const pointers = config.data.about;
-
     return (
         <section className="my-32">
             <div className="mb-20 text-2xl font-semibold text-center md:text-3xl">Who Are We</div>
             <div className="flex flex-wrap justify-center px-8 gap-x-12 gap-y-10">
-                {pointers.map((point, i) => {
+                {config.about.map((point, i) => {
                     return (
                         <div key={i} className="md:w-1/5">
                             <div className="mb-2 text-xl font-semibold text-center">{point.title}</div>

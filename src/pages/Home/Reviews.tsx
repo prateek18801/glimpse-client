@@ -1,19 +1,14 @@
-import { useContext } from "react";
 import { FaStar } from "react-icons/fa";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
-import ConfigContext from "../../contexts/ConfigContext";
+import config from "../../config";
 
 
 const Reviews = () => {
-
-    const config = useContext(ConfigContext);
-    const reviews = config.data.reviews;
-
     return (
         <section className="mb-20 md:px-16">
             <div className="mb-12 text-2xl font-semibold text-center">Reviews From Our Users</div>
             <div className="flex gap-4 px-8 py-4 overflow-x-scroll">
-                {reviews.map((review, i) => {
+                {config.reviews.map((review, i) => {
                     return <ReviewCard key={i} {...review} />
                 })}
             </div>

@@ -1,17 +1,12 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import ConfigContext from "../../contexts/ConfigContext";
+import config from "../../config";
 
 const Printing = () => {
-
-    const config = useContext(ConfigContext);
-    const prints = config.data.printing;
-
     return (
         <section className="px-4 mb-24 md:px-16">
             <div className="mb-12 text-2xl font-semibold text-center">Popular Printing Categories</div>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-6">
-                {prints.map((print, i) => {
+                {config.printCategories.map((print, i) => {
                     return <PrintingCard key={i} {...print} />;
                 })}
             </div>

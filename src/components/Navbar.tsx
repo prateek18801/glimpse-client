@@ -1,11 +1,9 @@
-import { useState, useRef, useEffect, useContext } from "react";
+import { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
-import ConfigContext from "../contexts/ConfigContext";
+import config from "../config";
 
 const Navbar = () => {
-
-    const config = useContext(ConfigContext);
 
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -67,7 +65,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <a href={config.data.loginUrl}><button className="px-6 py-3 text-sm font-medium text-white bg-black rounded-sm">LOGIN</button></a>
+                <a href={config.loginRedirectUrl}><button className="px-6 py-3 text-sm font-medium text-white bg-black rounded-sm">LOGIN</button></a>
             </div>
         </nav>
     );
